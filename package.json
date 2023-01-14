@@ -3,7 +3,7 @@
   "name": "open-in-vscode",
   "title": "Open in VSCode",
   "description": "Returns a list of code projects to open in Visual Studio Code",
-  "icon": "assets/command-icon.png",
+  "icon": "command-icon.png",
   "author": "danphilibin",
   "license": "MIT",
   "commands": [
