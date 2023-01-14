@@ -1,0 +1,71 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "open-in-vscode",
+  "title": "Open in VSCode",
+  "description": "Returns a list of code projects to open in Visual Studio Code",
+  "icon": "assets/command-icon.png",
+  "author": "danphilibin",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "code",
+      "title": "code",
+      "description": "Open the selected directory in Visual Studio Code.",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "startDirectory",
+      "type": "textfield",
+      "default": "~/dev",
+      "required": true,
+      "title": "Start directory",
+      "description": "Starting directory for the command. ~ is expanded into your home directory"
+    },
+    {
+      "name": "projectHints",
+      "type": "textfield",
+      "default": "node_modules, package.json, requirements.txt, .gitignore",
+      "required": true,
+      "title": "Project hints",
+      "description": "Only folders containing one of these files will be included."
+    },
+    {
+      "name": "maxLevels",
+      "type": "textfield",
+      "default": "2",
+      "required": true,
+      "title": "Number of levels to search",
+      "description": "How many levels of folders to scan for projects. Maximum of 5."
+    },
+    {
+      "name": "codeAppName",
+      "type": "textfield",
+      "default": "Visual Studio Code",
+      "required": true,
+      "title": "'Open With' application name'",
+      "description": "Projects will be opened with this application."
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.45.3"
+  },
+  "devDependencies": {
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
